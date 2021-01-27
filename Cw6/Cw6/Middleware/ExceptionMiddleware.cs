@@ -32,11 +32,11 @@ namespace Cw6.Middleware
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            
+
             return context.Response.WriteAsync(new ErrorDetails
             {
                 StatusCode = (int)StatusCodes.Status500InternalServerError,
-                Message = "Wystąpił jakiś błąd..."
+                Message = $"Wystąpił błąd {e}"
             }.ToString());
         }
     }
